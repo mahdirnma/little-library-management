@@ -15,6 +15,7 @@
                     <tr class="h-12 border border-gray-400 border-b-2 border-b-gray-400">
                         <td class="text-center">delete</td>
                         <td class="text-center">update</td>
+                        <td class="text-center">books</td>
                         <td class="text-center">status</td>
                         <td class="text-center">biography</td>
                         <td class="text-center">birth country</td>
@@ -30,13 +31,19 @@
                                 <form action="{{route('authors.destroy',$author)}}" method="post">
                                     @csrf
                                     @method('delete')
-                                    <button type="submit" class="text-cyan-600 cursor-pointer">delete</button>
+                                    <button type="submit" class="text-red-600 cursor-pointer">delete</button>
                                 </form>
                             </td>
                             <td class="text-center">
                                 <form action="{{route('authors.edit',$author)}}" method="get">
                                     @csrf
                                     <button type="submit" class="text-green-600 cursor-pointer">update</button>
+                                </form>
+                            </td>
+                            <td class="text-center">
+                                <form action="{{route('authors.show',$author)}}" method="get">
+                                    @csrf
+                                    <button type="submit" class="text-blue-600 cursor-pointer">books</button>
                                 </form>
                             </td>
                             <td class="text-center">{{$author->status==1?'active':'inactive'}}</td>

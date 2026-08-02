@@ -43,7 +43,8 @@ class AuthorController extends Controller
      */
     public function show(Author $author)
     {
-        //
+        $books=$author->books()->paginate(2);
+        return view('admin.author.books',compact('author','books'));
     }
 
     /**
