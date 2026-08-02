@@ -16,8 +16,8 @@
             <nav>
                 <ul class="flex flex-row-reverse">
                     <li class="w-44 h-full flex justify-center items-center font-mono text-balance"><a href="{{route('authors.index')}}">Authors</a></li>
-                    <li class="w-44 h-full flex justify-center items-center font-mono text-balance"><a href="{{--{{route('students.index')}}--}}">students</a></li>
-                    <li class="w-44 h-full flex justify-center items-center font-mono text-balance"><a href="{{--{{route('memberCreate')}}--}}">add student to class</a></li>
+                    <li class="w-44 h-full flex justify-center items-center font-mono text-balance"><a href="{{route('books.index')}}">books</a></li>
+                    <li class="w-44 h-full flex justify-center items-center font-mono text-balance"><a href="{{--{{route('memberCreate')}}--}}">categories</a></li>
                 </ul>
             </nav>
         </div>
