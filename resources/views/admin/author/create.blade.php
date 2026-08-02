@@ -42,7 +42,7 @@
                     <div class="w-[55%] h-full flex flex-col items-end pr-10">
                         <div class="w-5/6 h-auto flex flex-row-reverse justify-between pt-4 mb-6">
                             <label for="biography" class="font-semibold ml-5">: biography</label>
-                            <textarea name="biography" id="biography" cols="10" rows="10" class="w-2/5 h-28 rounded outline-0 p-2 border border-gray-400"></textarea>
+                            <textarea name="biography" id="biography" cols="10" rows="10" class="w-2/5 h-28 rounded outline-0 p-2 border border-gray-400">{{old('biography')}}</textarea>
                             @error('biography')
                             <p class="text-red-700">{{$message}}</p>
                             @enderror

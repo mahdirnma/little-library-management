@@ -22,7 +22,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.category.create');
     }
 
     /**
@@ -30,7 +30,11 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-        //
+        $category=Category::create($request->all());
+        if ($category) {
+            return redirect()->route('categories.index')->with('success','Category created successfully');
+        }
+        return back()->withInput()->with('error','Unable to create category');
     }
 
     /**
