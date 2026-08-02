@@ -22,7 +22,8 @@ class AuthorController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.author.create');
+
     }
 
     /**
@@ -30,7 +31,11 @@ class AuthorController extends Controller
      */
     public function store(StoreAuthorRequest $request)
     {
-        //
+        $author=Author::create($request->validated());
+        if ($author) {
+            return redirect()->route('authors.index')->with('success','Author created successfully');
+        }
+        return back()->withInput();
     }
 
     /**

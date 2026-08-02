@@ -12,7 +12,7 @@ class StoreAuthorRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,7 +23,11 @@ class StoreAuthorRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'firstName'=>'required|string|min:3|max:30',
+            'lastName'=>'required|string|min:3|max:30',
+            'birthYear' => 'required|integer|between:1930,2026',
+            'birthCountry' => 'required|string|min:2|max:30',
+            'biography'=> 'required|string|max:255',
         ];
     }
 }
