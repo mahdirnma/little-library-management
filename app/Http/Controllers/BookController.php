@@ -48,7 +48,8 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-        //
+        $authors=$book->authors()->paginate(2);
+        return view('admin.book.authors',compact('book','authors'));
     }
 
     /**

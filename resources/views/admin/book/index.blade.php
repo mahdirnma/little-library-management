@@ -15,6 +15,7 @@
                     <tr class="h-12 border border-gray-400 border-b-2 border-b-gray-400">
                         <td class="text-center">delete</td>
                         <td class="text-center">update</td>
+                        <td class="text-center">authors</td>
                         <td class="text-center">categories</td>
                         <td class="text-center">stock</td>
                         <td class="text-center">price</td>
@@ -41,14 +42,12 @@
                                     <button type="submit" class="text-green-600 cursor-pointer">update</button>
                                 </form>
                             </td>
-{{--
                             <td class="text-center">
-                                <form action="{{route('authors.show',$author)}}" method="get">
+                                <form action="{{route('books.show',$book)}}" method="get">
                                     @csrf
-                                    <button type="submit" class="text-blue-600 cursor-pointer">books</button>
+                                    <button type="submit" class="text-blue-600 cursor-pointer">authors</button>
                                 </form>
                             </td>
---}}
                             <td class="text-center">
                                 @foreach($book->categories as $cat)
                                     {{$cat->title}} ,
