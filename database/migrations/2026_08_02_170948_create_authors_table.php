@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('authors', function (Blueprint $table) {
             $table->id();
+            $table->string('firstName');
+            $table->string('lastName');
+            $table->year('birthYear');
+            $table->string('birthCountry');
+            $table->text('biography');
+            $table->boolean('status')->default(true);
+            $table->boolean('is_active')->default(true);
+
             $table->timestamps();
         });
     }
