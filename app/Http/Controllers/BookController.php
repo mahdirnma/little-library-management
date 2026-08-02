@@ -56,7 +56,9 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        //
+        $categories=Category::all();
+        $authors=Author::all();
+        return view('admin.book.update',compact('book','categories','authors'));
     }
 
     /**
@@ -64,7 +66,10 @@ class BookController extends Controller
      */
     public function update(UpdateBookRequest $request, Book $book)
     {
-        //
+        $book->update($request->only('title','ISBN','publishedYear','pageCount','summary','price','stock'));
+        $book->authors()->sync($request->authors);
+        $book->categories()->sync($request->categories);
+        return redirect()->route('books.index')->with('success','Book updated successfully');
     }
 
     /**
