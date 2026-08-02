@@ -51,7 +51,7 @@ class AuthorController extends Controller
      */
     public function edit(Author $author)
     {
-        //
+        return view('admin.author.update',compact('author'));
     }
 
     /**
@@ -59,7 +59,11 @@ class AuthorController extends Controller
      */
     public function update(UpdateAuthorRequest $request, Author $author)
     {
-        //
+        $status=$author->update($request->validated());
+        if ($status) {
+            return redirect()->route('authors.index')->with('success','Author updated successfully');
+        }
+        return back()->withInput();
     }
 
     /**

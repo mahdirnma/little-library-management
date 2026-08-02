@@ -26,7 +26,7 @@ class StoreAuthorRequest extends FormRequest
             'firstName'=>'required|string|min:3|max:30',
             'lastName'=>'required|string|min:3|max:30',
             'birthYear' => 'required|integer|between:1930,2026',
-            'birthCountry' => 'required|string|min:2|max:30',
+            'birthCountry' => 'required|alpha|string|min:2|max:30',
             'biography'=> 'required|string|max:255',
         ];
     }
