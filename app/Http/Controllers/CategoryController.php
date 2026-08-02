@@ -50,7 +50,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('admin.category.update',compact('category'));
     }
 
     /**
@@ -58,7 +58,11 @@ class CategoryController extends Controller
      */
     public function update(UpdateCategoryRequest $request, Category $category)
     {
-        //
+        $status=$category->update($request->all());
+        if ($status) {
+            return redirect()->route('categories.index')->with('success','Category updated successfully');
+        }
+        return back()->withInput()->with('error','Unable to update category');
     }
 
     /**
