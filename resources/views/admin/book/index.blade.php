@@ -15,6 +15,7 @@
                     <tr class="h-12 border border-gray-400 border-b-2 border-b-gray-400">
                         <td class="text-center">delete</td>
                         <td class="text-center">update</td>
+                        <td class="text-center">categories</td>
                         <td class="text-center">stock</td>
                         <td class="text-center">price</td>
                         <td class="text-center">summary</td>
@@ -48,6 +49,11 @@
                                 </form>
                             </td>
 --}}
+                            <td class="text-center">
+                                @foreach($book->categories as $cat)
+                                    {{$cat->title}} ,
+                                @endforeach
+                            </td>
                             <td class="text-center">{{$book->stock}}</td>
                             <td class="text-center">{{$book->price}} $</td>
                             <td class="text-center">{{$book->summary}}</td>
