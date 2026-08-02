@@ -77,6 +77,9 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
-        //
+        $book->authors()->detach();
+        $book->categories()->detach();
+        $book->update(['is_active'=>0]);
+        return redirect()->route('books.index')->with('success','Book deleted successfully');
     }
 }
