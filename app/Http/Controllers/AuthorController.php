@@ -71,6 +71,7 @@ class AuthorController extends Controller
      */
     public function destroy(Author $author)
     {
-        //
+        $author->update(['is_active'=>0]);
+        return redirect()->route('authors.index');
     }
 }
