@@ -42,7 +42,8 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        $books=$category->books()->paginate(2);
+        return view('admin.category.books',compact('category','books'));
     }
 
     /**
